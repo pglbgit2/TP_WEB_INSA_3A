@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Connexion</title>
+    </head>
+<body>
+    <?php    
+    include('../../controllers/Users.php');
+        session_start();
+        if (isset($_POST['submit']))
+        {
+            if ($_POST['user']!="" && $_POST['email']!="" && $_POST['password']!="")
+            {
+                echo "<p>bon</p>" ;
+                $users = new Users();
+                $users->register();
+            }
+            else
+            {
+                echo '<p> NNNOOOON</p>';
+            }
+        }
+        else
+        {
+            echo'
+            <form id="conn" method="post" action="" >
+                <p><label for="user">Login:</label><input type="text" id="user" name="user"/></p>
+                <p><label for="email">Email:</label><input type="email" id="email" name="email"></p>
+                <p><label for="password">Mot de passe:</label><input type="password" id="password" name="password" /></p>
+                <p><input type="submit" id="submit" name="submit" value="Register"/></p>
+            </form>;
+            ';
+        }
+        ?>
+    </body>
