@@ -8,29 +8,30 @@
 <body>
     <?php    
         session_start();
+        var_dump($_POST);
         if (isset($_POST['submit']) or isset($_SESSION['submit']))
         {
-            if ($_SESSION['login']=="rtas" && $_SESSION['password']=="azerty" && $_SESSION['submit']=="yes")
-            {
-                echo $login ;
-                echo "<p>correctly connected</p>" ;
-            }
-            else{
-                $login=(isset($_POST['login'])) ? $_POST['login'] :'';
-                $pass=(isset($_POST['pass'])) ? $_POST['pass']:'';
-                if (($login=="rtas") && ($pass == "azerty"))
-                {
-                    $_SESSION['login'] = "rtas";
-                    $_SESSION['password'] = "azerty";
-                    $_SESSION['submit'] = "yes";
-                    echo $login ;
-                    echo "<p>correctly connected</p>" ;
-                }
-                else
-                {
-                    echo '<p style="color:#FF0000; font-weight:bold;">Erreur de connexion</p>';
-                }
-            }
+            // if ($_SESSION['login']=="rtas" && $_SESSION['password']=="azerty" && $_SESSION['submit']=="yes")
+            // {
+            //     echo $login ;
+            //     echo "<p>correctly connected</p>" ;
+            // }
+            // else{
+            //     $login=(isset($_POST['login'])) ? $_POST['login'] :'';
+            //     $pass=(isset($_POST['pass'])) ? $_POST['pass']:'';
+            //     if (($login=="rtas") && ($pass == "azerty"))
+            //     {
+            //         $_SESSION['login'] = "rtas";
+            //         $_SESSION['password'] = "azerty";
+            //         $_SESSION['submit'] = "yes";
+            //         echo $login ;
+            //         echo "<p>correctly connected</p>" ;
+            //     }
+            //     else
+            //     {
+            //         echo '<p style="color:#FF0000; font-weight:bold;">Erreur de connexion</p>';
+            //     }
+            // }
             
         }
         else

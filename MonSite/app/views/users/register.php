@@ -6,9 +6,10 @@
     </head>
 <body>
     <?php    
-    define('APP_ROOT', '/home/rtas/Bureau/gitmonsite/TP_WEB_INSA_3A/MonSite/');
-    include(APP_ROOT . 'app/controllers/Users.php');
+    include('./../../config/config.php');
+    include(APP_ROOT . '/app/controllers/Users.php');
         session_start();
+        echo(APP_ROOT);
         if (isset($_POST['submit']))
         {
             if ($_POST['user']!="" && $_POST['email']!="" && $_POST['password']!="")

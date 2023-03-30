@@ -1,5 +1,6 @@
 <?php
-// echo (str_replace('app/config/config.php', '', $_SERVER['SCRIPT_FILENAME']));
-define('APP_ROOT', '/home/rtas/Bureau/gitmonsite/TP_WEB_INSA_3A/MonSite/');
+// echo ());
+$directory=getcwd();
+define('APP_ROOT', str_replace('app/views/users', '', $directory ));
 define('URL_ROOT', "http://monsite.fr");
 

@@ -1,6 +1,5 @@
 <?php
-define('APP_ROOT', '/home/rtas/Bureau/gitmonsite/TP_WEB_INSA_3A/MonSite/');
-include_once(APP_ROOT . "app/libraries/Database.php");
+include_once(APP_ROOT . "/app/libraries/Database.php");
 
 class User
 {

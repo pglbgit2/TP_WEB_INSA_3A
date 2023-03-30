@@ -1,8 +1,7 @@
 <?php
-define('APP_ROOT', '/home/rtas/Bureau/gitmonsite/TP_WEB_INSA_3A/MonSite/');
-require_once(APP_ROOT."app/libraries/Controller.php");
-include_once(APP_ROOT."app/models/User.php");
-include_once(APP_ROOT.'app/config/helpers/url_helpers.php');
+require_once(APP_ROOT."/app/libraries/Controller.php");
+include_once(APP_ROOT."/app/models/User.php");
+include_once(APP_ROOT.'/app/config/helpers/url_helpers.php');
 class Users extends Controller{
 
     private $model;
@@ -11,15 +10,15 @@ class Users extends Controller{
     }
 
 
-    // public function logins($email, $password){
+    public function login(){
 
-    //     session_start();
-
-    //     $_POST['email'] = $email;
-    //     $_POST['password'] = $password; 
-
-    //     $this->user->login($_POST['email'], $_POST['password']);
-    // }
+       $test=$this->User->login($_POST['email'], $_POST['password']);
+       if($test != false)
+       {
+        $_SESSION['email']=$_POST['email'];
+       }
+       redirect('test.php');
+    }
 
     public function register(){
         $data['username'] = $_POST['user'];
