@@ -5,9 +5,17 @@
         <title>Connexion</title>
     </head>
 <body>
-    <?php    
-    define('APP_ROOT', '/home/rtas/Bureau/gitmonsite/TP_WEB_INSA_3A/MonSite/');
-    include(APP_ROOT . 'app/controllers/Users.php');
+
+
+
+    <p id="navheader"> </p>
+    <script src="../../../static/code.js">
+    </script>
+    <script>navbar(); </script>
+
+    <?php
+    include('../../config/config.php');
+    include(APP_ROOT . '/app/controllers/Users.php');
         session_start();
         if (isset($_POST['submit']))
         {

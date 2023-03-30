@@ -1,8 +1,7 @@
 <?php
-define('APP_ROOT', '/home/rtas/Bureau/gitmonsite/TP_WEB_INSA_3A/MonSite/');
-require_once(APP_ROOT."app/libraries/Controller.php");
-include_once(APP_ROOT."app/models/User.php");
-include_once(APP_ROOT.'app/config/helpers/url_helpers.php');
+require_once(APP_ROOT."/app/libraries/Controller.php");
+include_once(APP_ROOT."/app/models/User.php");
+include_once(APP_ROOT.'/app/config/helpers/url_helpers.php');
 class Users extends Controller{
 
     private $model;
