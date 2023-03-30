@@ -6,7 +6,8 @@
     </head>
 <body>
     <?php    
-    include('../../controllers/Users.php');
+    define('APP_ROOT', '/home/rtas/Bureau/gitmonsite/TP_WEB_INSA_3A/MonSite/');
+    include(APP_ROOT . 'app/controllers/Users.php');
         session_start();
         if (isset($_POST['submit']))
         {

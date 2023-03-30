@@ -1,5 +1,6 @@
 <?php
-include_once("../libraries/Database.php");
+define('APP_ROOT', '/home/rtas/Bureau/gitmonsite/TP_WEB_INSA_3A/MonSite/');
+include_once(APP_ROOT . "app/libraries/Database.php");
 
 class User
 {
@@ -87,7 +88,7 @@ class User
     }
     public function register($data)
     {
-        $sql = "INSERT INTO Users VALUES(" . $data['username'] . "," . $data['email'] . "," . ($data['password']. "," . "PASSWORD_DEFAULT") . "," . $data['role'] . ");";
+        $sql = "INSERT INTO Users (username, email, password, role) VALUES('" . $data['username'] . "','" . $data['email'] . "','" . ($data['password']) . "','" . $data['role'] . "');";
         $this->get_db()->prepare($sql);
         $this->get_db()->execute();
         if ($this->get_db()->single() == false)
@@ -101,5 +102,4 @@ class User
     }
 }
 
-$u=new User();
-// $result=$u->register();
+

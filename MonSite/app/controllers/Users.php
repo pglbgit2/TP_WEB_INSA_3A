@@ -1,7 +1,8 @@
 <?php
-include("../libraries/Controller.php");
-include("../models/User.php");
-include('../config/helpers/url_helpers.php');
+define('APP_ROOT', '/home/rtas/Bureau/gitmonsite/TP_WEB_INSA_3A/MonSite/');
+require_once(APP_ROOT."app/libraries/Controller.php");
+include_once(APP_ROOT."app/models/User.php");
+include_once(APP_ROOT.'app/config/helpers/url_helpers.php');
 class Users extends Controller{
 
     private $model;
@@ -21,41 +22,48 @@ class Users extends Controller{
     // }
 
     public function register(){
-        $data['username'] = $_POST['username'];
+        $data['username'] = $_POST['user'];
         $data['email'] = $_POST['email'];
-        $data['password'] = password_hash($_POST['password'], "PASSWORD_DEFAULT");
-        $date['role'] = 'normal';
+        $data['password'] = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        $data['role'] = 'normal';
+        echo $data['username'];
+        echo $data['email'];
+        echo $data['password'];
+        echo $data['role'];
+
         $test = 1;
-        if (strcmp($data['username'],'')){
+        if (!strcmp($data['username'],'')){
             echo 'no username';
             $test = 0;
         }
-        if (strcmp($data['email'],'')){
+        if (!strcmp($data['email'],'')){
             echo 'no email';
             $test = 0;
         }
-        if (strcmp($data['password'],'')){
+        if (!strcmp($data['password'],'')){
             echo 'no password';
             $test = 0;
         }
-        if (strcmp($data['role'],'')){
+        if (!strcmp($data['role'],'')){
             echo 'no role';
             $test = 0;
         }
-        if ($this->model->findUserByEmail($data['email'])){
+        if ($this->User->findUserByEmail($data['email'])){
             echo 'already existing email';
             $test = 0;
         }
         if ($test == 0){
-            redirect('/views/users/register.php');
+            redirect('register.php');
         }
-        redirect('/views/users/login.php');
-
+        else
+        {
+            $this->User->register($data);
+            redirect('login.php');
+        }
+        
 
     }
 
 }
-
-$u=new Users()
 
 ?>

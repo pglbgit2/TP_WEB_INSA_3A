@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="static/CSS/login.css" />
+        <!--<link rel="stylesheet" href="static/CSS/login.css" />-->
         <title>Connexion</title>
     </head>
 <body>
