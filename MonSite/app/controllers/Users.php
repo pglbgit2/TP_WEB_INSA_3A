@@ -15,7 +15,13 @@ class Users extends Controller{
        $test=$this->User->login($_POST['email'], $_POST['password']);
        if($test != false)
        {
-        $_SESSION['email']=$_POST['email'];
+            $_SESSION['email']=$_POST['email'];
+            redirect("../test.php");
+       }
+       else
+       {
+            unset($_POST);
+            redirect('login.php');
        }
     }
 
