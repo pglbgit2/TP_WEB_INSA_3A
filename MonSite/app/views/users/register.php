@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Connexion</title>
+        <title>Inscription</title>
     </head>
 <body>
 
@@ -22,7 +22,6 @@
         {
             if ($_POST['user']!="" && $_POST['email']!="" && $_POST['password']!="")
             {
-                echo "<p>bon</p>" ;
                 $users = new Users();
                 $users->register();
             }

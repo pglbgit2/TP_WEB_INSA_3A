@@ -17,7 +17,6 @@ class Users extends Controller{
        {
         $_SESSION['email']=$_POST['email'];
        }
-       redirect('test.php');
     }
 
     public function register(){

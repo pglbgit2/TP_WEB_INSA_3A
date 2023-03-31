@@ -49,9 +49,9 @@ class User
         $this->get_db()->prepare($sql);
         $this->get_db()->execute();
         $row = $this->get_db()->single();
-        // if (password_verify($password, $row["password"])){
-        //     return $row;
-        // }
+         if (password_verify($password, $row["password"])){
+             return $row;
+        }
 
         if (strcmp($password, $row["password"])==0){
             return $row;

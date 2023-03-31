@@ -10,3 +10,7 @@ $local = str_replace( '/views' ,'',$local);
 $local = str_replace( '/users' ,'',$local);
 $local = str_replace( '/register.php' ,'',$local);
 $local = str_replace( '/login.php' ,'',$local);
+
+define('APP_ROOT', $local);
+define('URL_ROOT', "http://monsite.fr");
+?>

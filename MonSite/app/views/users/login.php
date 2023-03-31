@@ -3,43 +3,30 @@
     <head>
         <meta charset="utf-8" />
         <!--<link rel="stylesheet" href="static/CSS/login.css" />-->
-        <title>Connexion</title>
+        <title>Connection</title>
     </head>
 <body>
     <?php    
+        include('../../config/config.php');
+        include(APP_ROOT . '/app/controllers/Users.php');    
         session_start();
-        var_dump($_POST);
-        if (isset($_POST['submit']) or isset($_SESSION['submit']))
+        var_dump($_SESSION['email']); 
+        if(isset($_SESSION['email']))
         {
-            // if ($_SESSION['login']=="rtas" && $_SESSION['password']=="azerty" && $_SESSION['submit']=="yes")
-            // {
-            //     echo $login ;
-            //     echo "<p>correctly connected</p>" ;
-            // }
-            // else{
-            //     $login=(isset($_POST['login'])) ? $_POST['login'] :'';
-            //     $pass=(isset($_POST['pass'])) ? $_POST['pass']:'';
-            //     if (($login=="rtas") && ($pass == "azerty"))
-            //     {
-            //         $_SESSION['login'] = "rtas";
-            //         $_SESSION['password'] = "azerty";
-            //         $_SESSION['submit'] = "yes";
-            //         echo $login ;
-            //         echo "<p>correctly connected</p>" ;
-            //     }
-            //     else
-            //     {
-            //         echo '<p style="color:#FF0000; font-weight:bold;">Erreur de connexion</p>';
-            //     }
-            // }
-            
+            echo('correctly connected');
+        }
+        else if (isset($_POST['submit']) and isset($_POST['email']) and isset($_POST['password']))
+        {
+            $users = new Users();
+            $users->login();
+            $_POST=null;
         }
         else
         {
             echo '
             <form id="conn" method="post" action="" >
-                <p><label for="login">Login:</label><input type="text" id="login" name="login"/></p>
-                <p><label for="pass">Mot de passe:</label><input type="password" id="pass" name="pass" /></p>
+                <p><label for="email">Email:</label><input type="text" id="email" name="email"/></p>
+                <p><label for="password">Mot de passe:</label><input type="password" id="password" name="password" /></p>
                 <p><input type="submit" id="submit" name="submit" value="Connexion"/></p>
             </form>';
             
