@@ -5,8 +5,16 @@
         <title>Connexion</title>
     </head>
 <body>
-    <?php    
-    include('./../../config/config.php');
+
+
+
+    <p id="navheader"> </p>
+    <script src="../../../static/code.js">
+    </script>
+    <script>navbar(); </script>
+
+    <?php
+    include('../../config/config.php');
     include(APP_ROOT . '/app/controllers/Users.php');
         session_start();
         echo(APP_ROOT);
